@@ -74,12 +74,11 @@ epsilon <- 1/30
 # Number ofleapfrog jumps
 L <- 30
 
-init <- c(0,0)
-
 # Number of posterior sample
 n_mcmc <- 100
 
 # Initialize chain
+init <- c(0,0)
 sample_hmc <- matrix(0, nrow=n_mcmc, ncol=2)
 sample_hmc[1,] <- init
 accepted_hmc <- 0
