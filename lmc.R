@@ -65,7 +65,7 @@ for(i in 2:n_mcmc) {
   accepted <- accepted + temp$accepted
 }
 
-# Verify that the sample correlation is quite different from the true rho (0.95)
+# Verify that the chain did not reach the highest density region yet
 sample <- sample[(n_mcmc/2+1):n_mcmc,]
 plot(sample, xlim=c(-3, 3), ylim=c(-3, 3))
 cor(sample)
@@ -89,6 +89,7 @@ for(i in 2:n_mcmc) {
 }
 
 # Not as good as HMC, but better than random walk MCMC
+# Verify that sampling is already being done in the highest density region
 sample_LMC <- sample_LMC[(n_mcmc/2+1):n_mcmc,]
 plot(sample_LMC, xlim=c(-3, 3), ylim=c(-3, 3))
 cor(sample_LMC)
