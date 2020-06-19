@@ -113,9 +113,9 @@ for(i in 2:n_mcmc) {
   accepted <- accepted + temp$accepted
 }
 
-# Verify that the values drawn are actually from the target distribution
+# Verify that the sample correlation is quite different from the true rho (0.95)
 plot(sample, xlim=c(-3, 3), ylim=c(-3, 3))
 cor(sample)
 
-# Acceptance rate (should be very high)
+# Acceptance rate (lower than in HMC)
 accepted / n_mcmc
