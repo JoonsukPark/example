@@ -1,5 +1,4 @@
-library(numDeriv)
-library(mvtnorm)
+## Hamiltonian Monte Carlo example
 
 # We will sample from bivariate MVN(c(0,0), Sigma), with a very high correlation.
 
@@ -78,7 +77,7 @@ L <- 30
 init <- c(0,0)
 
 # Number of posterior sample
-n_mcmc <- 10000
+n_mcmc <- 100
 
 # Initialize chain
 sample_hmc <- matrix(0, nrow=n_mcmc, ncol=2)
